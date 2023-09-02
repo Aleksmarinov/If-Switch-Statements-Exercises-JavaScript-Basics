@@ -1,0 +1,56 @@
+function newHouse (input) {
+let typeOfFlowers = input[0];
+let flowersCount = Number(input[1]);
+let budget = Number(input[2]);
+let counter = 0
+
+let roses = 5;
+let dahlias = 3.8;
+let tulips = 2.8;
+let narcissus = 3;
+let gladiolus = 2.5;
+
+if (typeOfFlowers === "Roses") {
+    counter = flowersCount * roses;
+    if (flowersCount > 80) {
+        counter *= 0.9;
+    }
+} 
+
+else if (typeOfFlowers === "Dahlias") {
+    counter = flowersCount * dahlias;
+    if (flowersCount > 90) {
+       counter *= 0.85;
+    }
+}
+
+else if (typeOfFlowers === "Tulips") {
+    counter = flowersCount * tulips;
+    if (flowersCount > 80) {
+        counter *= 0.85;
+    }
+}
+
+else if (typeOfFlowers === "Narcissus") {
+    counter = flowersCount * narcissus;
+    if (flowersCount < 120) {
+        counter *= 1.15;
+    }
+}
+
+else if (typeOfFlowers === "Gladiolus") {
+    counter = flowersCount * gladiolus;
+    if (flowersCount < 80) {
+        counter *= 1.20;
+    }
+}
+
+let diff = Math.abs(budget - counter);
+
+if (budget >= counter) {
+    console.log(`Hey, you have a great garden with ${flowersCount} ${typeOfFlowers} and ${diff.toFixed(2)} leva left.`);
+} else {
+    console.log(`Not enough money, you need ${diff.toFixed(2)} leva more.`);
+}
+}
+newHouse(["Tulips", "88", "260"])
