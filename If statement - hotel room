@@ -1,0 +1,51 @@
+function hotelRoom(input) {
+    let month = input[0];
+    let numberOfNights = Number(input[1]);
+    let studio = "";
+    let apartment = "";
+    let totalPrice = 0;
+
+   switch (month) {
+        case "May": 
+        case "October":
+            studio = 50;
+            apartment = 65;
+
+            if (14 < numberOfNights) {
+                studio = studio * 0.7;
+                apartment = apartment * 0.9;
+            }
+            else if (7 < numberOfNights) {
+                studio = studio * 0.95;
+            }
+            break;
+
+        case "June":
+        case "September":
+            studio = 75.20;
+            apartment = 68.70;
+
+            if(14 < numberOfNights) {
+                studio = studio * 0.8;
+                apartment = apartment * 0.9;
+            }
+            break;
+
+        case "July":
+        case "August":
+            studio = 76;
+            apartment = 77;
+
+            if(14 < numberOfNights){
+                apartment = apartment * 0.9;
+            }
+            break;
+   }
+
+   let sumA = (numberOfNights * apartment);
+   let sumB = (numberOfNights * studio);
+
+   console.log(`Apartment: ${sumA.toFixed(2)} lv.`)
+   console.log(`Studio: ${sumB.toFixed(2)} lv.`)
+}
+hotelRoom(["August", "20"])
