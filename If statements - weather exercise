@@ -1,0 +1,10 @@
+function weather(input){
+    let weatherOutside = input[0];
+
+    if(weatherOutside === "sunny"){
+        console.log(`It's warm outside!`);
+    } else {
+        console.log(`It's cold outside!`);
+    }
+}
+weather(["sunny"]);
